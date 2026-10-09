@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Design Lab – פדגוגיה, למידה פעילה וכלים דיגיטליים</title>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #086e7d;
+            --accent: #f38181;
+            --bg-light: #f7f9fa;
+            --card-bg: #ffffff;
+            --text-dark: #2c3e50;
+            --text-muted: #6c757d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background-color: white;
+            padding: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            sticky: top;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+        }
+
+        .section-card h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-card p.description {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Embed Frames */
+        .embed-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e1e8ed;
+            margin-top: 1rem;
+        }
+
+        .embed-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Action Badges & Buttons */
+        .action-box {
+            background-color: #eef7f9;
+            border-right: 4px solid var(--secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .action-box code {
+            background-color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: bold;
+            border: 1px dashed var(--secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #e1e8ed;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .embed-container { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎓 Activity Design Lab</h1>
+        <p>פדגוגיה חדשנית, למידה פעילה וכלים דיגיטליים בהוראה</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">אודות</a></li>
+            <li><a href="#notebook">NotebookLM</a></li>
+            <li><a href="#menti">Mentimeter</a></li>
+            <li><a href="#padlet">Padlet</a></li>
+            <li><a href="#forms">Google Forms</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <!-- אודות -->
+        <section id="about" class="section-card">
+            <h2>✨ אודות המעבדה</h2>
+            <p class="description">
+                ברוכים הבאים ל-Activity Design Lab! המרחב הזה נבנה כדי להעניק למורים, מדריכים ואנשי חינוך ארגז כלים פרקטי, מתודולוגיות של למידה פעילה, גיימיפיקציה (Gamification) ושילוב כלים דיגיטליים מתקדמים בשיעורים.
+            </p>
+        </section>
+
+        <!-- NotebookLM -->
+        <section id="notebook" class="section-card">
+            <h2>🎓 סביבת מחקר ופודקאסט (NotebookLM)</h2>
+            <p class="description">
+                מרכז המשאבים הפדגוגיים והאקדמיים של המיזם נתמך בינה מלאכותית, כולל מחברת מחקר מרוכזת ותוצרי פודקאסט קולי.
+            </p>
+            <div class="action-box">
+                <span>מעבר למחברת המחקר המלאה ב-NotebookLM:</span>
+                <a href="https://gemini.google.com/notebook/a074ab4f-9817-433f-bf35-950c5d5f4519" target="_blank" class="btn">לפתיחת המחברת ↗</a>
+            </div>
+        </section>
+
+        <!-- Mentimeter -->
+        <section id="menti" class="section-card">
+            <h2>📊 סקר אינטראקטיבי בלייב (Mentimeter)</h2>
+            <p class="description">
+                שתפו את עמדותיכם והשפיעו בלייב! הסקר מציג תמונת מצב קבוצתית בזמן אמת לגבי אתגרים ופרקטיקות בהוראה פעילה.
+            </p>
+            <div class="action-box">
+                <span>📱 להשתתפות מהנייד היכנסו ל-<strong>menti.com</strong> עם הקוד: <code>4680 5673</code></span>
+                <a href="https://www.menti.com/al9hb9njhswj" target="_blank" class="btn">השתתפות ישירה ↗</a>
+            </div>
+            <div class="embed-container">
+                <iframe src="https://www.menti.com/al9hb9njhswj" title="Mentimeter Survey"></iframe>
+            </div>
+        </section>
+
+        <!-- Padlet -->
+        <section id="padlet" class="section-card">
+            <h2>📌 בנק הרעיונות השיתופי (Padlet)</h2>
+            <p class="description">
+                לוח שיתופי להעלאת רעיונות, משחקי ODT, שוברי קרח והתייעצויות פדגוגיות בין אנשי חינוך.
+            </p>
+            <div class="action-box">
+                <span>מוזמנים להוסיף רעיון, להגיב ולדרג פוסטים של קולגות:</span>
+                <a href="https://padlet.com/nettarozen/padlet-s023alnb9iovwbp7fvma" target="_blank" class="btn">פתיחה בחלון מלא ↗</a>
+            </div>
+            <div class="embed-container">
+                <iframe src="https://padlet.com/nettarozen/padlet-s023alnb9iovwbp7fvma" title="Padlet Board"></iframe>
+            </div>
+        </section>
+
+        <!-- Google Forms -->
+        <section id="forms" class="section-card">
+            <h2>📋 שאלון אבחון ומשוב (Google Forms)</h2>
+            <p class="description">
+                שאלון אבחון מותנה להתאמת כלים דיגיטליים לרמת הניסיון והצרכים הפדגוגיים שלך.
+            </p>
+            <div class="action-box">
+                <span>מעדיפים לענות בחלון נפרד?</span>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfogcboPWryEyk4yB9MB5PY4qKKeufxxTKMY_UNS7xZn-ORFA/viewform?usp=publish-editor" target="_blank" class="btn">לפתיחת הטופס ↗</a>
+            </div>
+            <div class="embed-container" style="height: 600px;">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfogcboPWryEyk4yB9MB5PY4qKKeufxxTKMY_UNS7xZn-ORFA/viewform?embedded=true">שטעון...</iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Activity Design Lab &copy; 2026 | מוגש במסגרת הקורס "המורה במרחב הדיגיטלי"</p>
+    </footer>
+
+</body>
+</html>
